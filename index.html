@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lightbox插件</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+
+    <link rel="stylesheet" href="dist/css/lightbox.css">
+
+    <style>
+      
+      .demo-body img{
+        height: 80px;
+        border:1px solid #e0e0e0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Lightbox</h1>
+      <h2 class="project-tagline"> 造轮子之 LightBox（图片查看器）</h2>
+      <a href="https://github.com/liaochao28/LightBox" class="btn">View on GitHub</a>
+      <!-- <a href="https://github.com/liaochao28/LightBox/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/liaochao28/LightBox/tarball/master" class="btn">Download .tar.gz</a> -->
+    </section>
+
+    <section class="main-content">
+      <h3>tips:</h3>
+      <ul class="tips">
+        <li>class="js-lightbox" 表示需要启用lightbox控件查看大图</li>
+        <li>data-role="lightbox" 表示需要启用lightbox控件查看大图</li>
+        <li>data-source="***" 表示清晰大图资源地址</li>
+        <li>data-id="***" 表示图片唯一标识</li>
+        <li>data-group="***" 表示图片所在组别</li>
+        <li>data-caption="***" 表示图片描述信息</li>
+      </ul>
+        
+
+      <div class="demo-body" style="min-height:500px;">
+
+        <h2>第一组图片</h2>
+        <img class="js-lightbox" data-role="lightbox" src="src/image/1.jpg" data-source="src/image/1.jpg" data-caption="第一组第一张图片" data-id="0001" data-group="group-one">
+
+        <img class="js-lightbox" data-role="lightbox" src="src/image/2.jpg" data-source="src/image/2.jpg" data-caption="第一组第二张图片" data-id="0002" data-group="group-one">
+
+        <img class="js-lightbox" data-role="lightbox" src="src/image/3.jpg" data-source="src/image/3.jpg" data-caption="第一组第三张图片" data-id="0003" data-group="group-one">
+
+
+        <h2>第二组图片</h2>
+        <img class="js-lightbox" data-role="lightbox" src="src/image/4.jpg" data-source="src/image/4.jpg" data-caption="第二组第一张图片" data-id="0004" data-group="group-two">
+
+
+      </div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/liaochao28/LightBox">Lightbox</a> is maintained by <a href="https://github.com/liaochao28">liaochao28</a>.</span>
+      </footer>
+
+    </section>
+    
+    <!-- <div class="lightbox-mask"></div>
+    <div class="lightbox-popup">
+      <div class="lightbox-pic-view">
+        <span class="lightbox-btn lightbox-prev-btn">&lt;</span>
+        <img src="src/image/1.jpg" alt="sss">
+        <span class="lightbox-btn lightbox-next-btn">&gt;</span>
+      </div>
+      <div class="lightbox-pic-caption">
+        <div class="lightbox-caption-area">
+          <h4 class="lightbox-desc">图片标题</h4>
+          <p class="lightbox-pic-index">图片索引：1 of 4</p>
+        </div>
+        <span class="">×</span>
+      </div>
+    </div> -->
+    <script src="src/js/jquery-1.11.3.min.js"></script>
+
+    <script src="src/js/lightbox.js"></script>
+    <!-- <script src="dist/minjs/lightbox.min.js"></script> -->
+    <script>
+      $(function(){
+        
+        var lightbox = new LightBox({
+                                      speed:300
+                                    });
+      });
+    </script>
+  </body>
+</html>
