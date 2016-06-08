@@ -1,0 +1,133 @@
+@mixin transition($set:all .15s){
+	transition:$set;
+} 
+
+.lightbox-mask{
+	display: none;
+	height: 100%;
+	width:100%;
+	background: #000;
+	background: rgba(0,0,0,.5);
+	filter:alpha(opacity=50);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.lightbox-popup{
+	display: none;
+	// margin:-150px 0 0 -200px;
+	position:fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 101;
+
+	.lightbox-pic-view{
+		height:300px;
+		width:400px;
+		background: #fff url(../../src/image/icon/loading.gif) no-repeat center center;
+		border:5px solid #fff;
+		border-radius:5px;
+		position: relative;
+
+		img{
+			display: block;
+			/* height:100%;
+			width:100%; */
+		}
+
+		.lightbox-btn {
+			width:80px;
+
+			background: url(../../src/image/icon/transparent.png) repeat top left;
+			font-size: 32px;
+			color:#fff;
+			text-align: center;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			z-index: 102;
+			-webkit-user-select:none;
+
+			@include transition(background-color .3s);
+		}
+
+		.lightbox-prev-btn{
+			left: 0px;
+		}
+		.lightbox-prev-btn-show{
+			background:#000;
+			filter:alpha(opacity=30);
+			background: url(../../src/image/icon/prev.png) no-repeat center left;
+			// background-size:  30%;
+			cursor: pointer;
+		}
+
+		.lightbox-next-btn{
+			right:0px;
+		}
+		.lightbox-next-btn-show{
+			background:#000;
+			filter:alpha(opacity=30);
+			background: url(../../src/image/icon/next.png) no-repeat center right;
+			// background-size:  30%;
+			cursor: pointer;
+		}
+	}
+
+	.lightbox-pic-caption{
+		margin: 0 5px;
+		padding:0 5px;
+		background: #000;
+		filter:alpha(opacity=50);
+		background: rgba(0,0,0,.5);
+		color: #ccc;
+		position: absolute;
+		bottom: 5px;
+		left:0px;
+		right:0px;
+
+		.lightbox-caption-area{
+			width:80%;
+			display: inline-block;
+			vertical-align: top;
+			color:#fff;
+
+			h4{
+				margin:5px 0;
+				height: 24px;
+				overflow: hidden;
+			}
+			p{
+				margin:5px 0;
+				font-size: 12px;
+			}
+		}
+		
+
+		span{
+			display: inline-block;
+			width: 58px;
+			text-align: center;
+			font-size: 32px;
+			line-height: 58px;
+			color: #ccc;
+			position: absolute;
+			right: 10px;
+			z-index: 103;
+			cursor: pointer;
+			-webkit-user-select:none;
+
+			@include transition(color .3s easeing);
+
+			&:hover{
+				color:#f00;
+			}
+			&:active{
+				text-shadow:0 -1px 5px rgba(0,0,0,.3);
+			}
+		}
+	}
+}
+
